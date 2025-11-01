@@ -13,11 +13,16 @@
             <h4>A tool be able to read long text in a short time</h4>
         </div>
         <div id="userinputs">
-            <textarea id="usertext">This is a speed read. Paste any text, press Play, and it will show each word quickly; great for speed reading or presenting lyrics, scripts, or quotes.</textarea>
+            <textarea id="usertext" placeholder="Paste any text, press Play, and it will show each word quickly; great for speed reading lyrics, scripts, or quotes."></textarea>
             <div id="buttons">
-                <button>Play</button>
+                <button onclick="Play()">Play</button>
                 <button>Restart</button>
-                <button>Clear</button>
+                <button onclick="Clear()">Clear</button>
+            </div>
+            <div id="speedmeter">
+                <label for="speed">Speed:</label>
+                <input type="range" id="speed" min="100" max="1000" step="50" value="500">
+                <label for="range" id="speedpreview"></label>
             </div>
         </div>
         <div id="result">
