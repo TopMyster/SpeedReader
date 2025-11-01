@@ -17,146 +17,178 @@ body {
 }
 
 * {
-    transition: .2s;
+  transition: .2s;
 }
+
+/* Layout Containers */
 
 #content {
-    padding: 25px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: rgba(42, 58, 78);
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.093);
-    border: 1px solid rgba(51, 72, 95, 0.732);
-    color: white;
-    border-radius: 12px;
-    transition: .3s;
-    margin: 4px;
-    opacity: .8;
-    font-weight: 550;
-    cursor: pointer;
-}
-
-button:hover {
-    border: 1px solid rgba(75, 106, 139, 0.732);
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-button:active {
-    transform: scale(.8);
-}
-
-#userinputs {
-    background-color: rgba(21, 26, 35, 0.477);
-    width: fit-content;
-    border: 1px #27313f solid;
-    padding: 15px 15px;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.255);
-}
-
-#usertext {
-    background-color: rgba(6, 8, 10, 0.788);
-    width: 58vw;
-    font-size: 15px;
-    height: 15vh;
-    flex-wrap: wrap;
-    resize: vertical;
-    min-height: 100px;
-    outline: none;
-    padding: 12px;
-    color: #FAFAFA;
-    border-radius: 10px;
-    border: 1px #27313f solid;
-    margin-bottom: 12px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.032);
+  padding: 25px;
 }
 
 #buttons {
-    display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
 
 #infotext {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-#infotext h1 {
-    font-weight: 600;
-    font-size: 22px;
-    margin-right: 20px;
+@keyframes appear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    } 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-#infotext h4 {
-    position: relative;
-    right: 5px;
-    font-weight: 300;
-    color: rgb(167, 167, 167);
-    font-size: 16px;
+@keyframes close {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    } 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
 }
 
 #result {
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    margin-top: 35px;
-    background-color: rgba(21, 26, 35, 0.477);
-    border: 1px #27313f solid;
-    padding: 15px 15px;
-    border-radius: 18px;
-    width: 60vw;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.255);
+  animation: appear .2s forwards;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  margin-top: 35px;
+  background-color: rgba(21, 26, 35, 0.477);
+  border: 1px #27313f solid;
+  padding: 15px 15px;
+  border-radius: 18px;
+  width: 60vw;
+  height: 30vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.255);
 }
+
+/* Inputs / Forms */
+
+#userinputs {
+  background-color: rgba(21, 26, 35, 0.477);
+  width: fit-content;
+  border: 1px #27313f solid;
+  padding: 15px 15px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.255);
+}
+
+#usertext {
+  background-color: rgba(6, 8, 10, 0.788);
+  width: 58vw;
+  font-size: 15px;
+  height: 15vh;
+  flex-wrap: wrap;
+  resize: vertical;
+  min-height: 100px;
+  outline: none;
+  padding: 12px;
+  color: #FAFAFA;
+  border-radius: 10px;
+  border: 1px #27313f solid;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.032);
+}
+
+/* Controls / Buttons */
+
+button {
+  padding: 10px 15px;
+  background-color: rgba(42, 58, 78);
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.093);
+  border: 1px solid rgba(51, 72, 95, 0.732);
+  color: white;
+  border-radius: 12px;
+  transition: .3s;
+  margin: 4px;
+  opacity: .8;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 1px solid rgba(75, 106, 139, 0.732);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(.8);
+}
+
+/* Typography */
+
+#infotext h1 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+#infotext h4 {
+  position: relative;
+  right: 5px;
+  font-weight: 300;
+  color: rgb(167, 167, 167);
+  font-size: 16px;
+}
+
+/* SpeedMeter */
 
 #speedmeter {
-    margin-top: 15px;
-    margin-left: 8px;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
+  margin-top: 15px;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
-
-#speed {
-    margin-left: 5px;
-    width: 200px;
-    transform: scaleX(-1);
-}
-
-#speed::-webkit-slider-runnable-track {
-    background-color: rgba(42, 58, 78);
-    border-radius: 50px;
-}
-
 
 #speedmeter label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
 }
 
 #speedpreview {
-    margin-left: 5px;
-    font-weight: 800;
-    color: #FAFAFA;
+  margin-left: 5px;
+  font-weight: 800;
+  color: #FAFAFA;
+}
+
+/* Speed */
+
+#speed {
+  margin-left: 5px;
+  width: 200px;
+  transform: scaleX(-1);
+}
+
+#speed::-webkit-slider-runnable-track {
+  background-color: rgba(42, 58, 78);
+  border-radius: 50px;
 }
