@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+* {
+    transition: .2s;
+}
+
 #content {
     padding: 25px;
 }

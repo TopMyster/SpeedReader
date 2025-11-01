@@ -26,3 +26,7 @@ function Play() {
 function Clear() {
     user.value = ''
 }
+
+function Restart() {
+    slider.value = 0
+}
