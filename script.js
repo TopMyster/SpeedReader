@@ -23,7 +23,7 @@ function Play() {
     int++
     if (int >= text.length) clearInterval(timer)
 
-    document.getElementById('rest').addEventListener('click',() => {
+    document.getElementById('restartbtn').addEventListener('click',() => {
         document.getElementById('result').style.display = 'none'
         clearInterval(timer)
     })
@@ -32,9 +32,4 @@ function Play() {
 
 function Clear() {
     user.value = ''
-}
-
-function Restart() {
-    document.getElementById('result').style.display = 'none'
-    clearInterval(timer)
 }
